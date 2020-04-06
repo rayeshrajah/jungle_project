@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'is not valid when email already exists' do
-      @user.save!
+      @user.save
       randUser = User.new(first_name: 'Jack', last_name: 'The Ripper', email: 'ray_6785876@hotmail.com', password: "ChickenPouletYeah", password_confirmation: "ChickenPouletYeah")
       expect(randUser).to_not be_valid
     end
@@ -52,6 +52,9 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    
+    it 'is valid when given the right credentials' do
+      @user.save
+      expect(User.authenticate_with_credentials('ray_6785876@hotmail.com', 'ChickenPouletYeah')).to be_a(User)
+    end
   end
 end

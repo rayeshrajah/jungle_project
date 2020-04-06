@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   validates :password, presence: true, confirmation: true, length: { minimum: 5 }
   validates :password_confirmation, presence: true
   validates_uniqueness_of :email, :case_sensitive => false
+
+  def self.authenticate_with_credentials email, password
+      user = User.find_by(email: email)
+  end
 end
