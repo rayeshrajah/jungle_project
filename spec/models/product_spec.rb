@@ -32,6 +32,10 @@ RSpec.describe Product, type: :model do
       expect(product.errors.full_messages).to be_empty
     end
     it 'is invalid without a category' do
+      category = Category.new(name: "Hammers")
+      product = described_class.new(name: "Jack-Hammer", price: 150, quantity: 40, category: nil)
+      expect(product.category).to be_nil
+      expect(product.errors.full_messages).to be_empty
     end
   end
 end
