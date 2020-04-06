@@ -23,6 +23,12 @@ RSpec.describe User, type: :model do
       @user.email = nil
       expect(@user).to_not be_valid
     end
+
+    it 'is not valid when email already exists' do
+      @user.save!
+      randUser = User.new(first_name: 'Jack', last_name: 'The Ripper', email: 'ray_6785876@hotmail.com', password: "ChickenPouletYeah", password_confirmation: "ChickenPouletYeah")
+      expect(randUser).to_not be_valid
+    end
     
     it 'is not valid without a password' do
       @user.password = nil
