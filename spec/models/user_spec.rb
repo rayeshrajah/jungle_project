@@ -34,6 +34,11 @@ RSpec.describe User, type: :model do
       @user.password = nil
       expect(@user).to_not be_valid
     end
+
+    it 'is not valid if the password has less than 5 characters' do
+      @user.password = "hi"
+      expect(@user).to_not be_valid
+    end
     
     it "is not valid without a password confirmation " do
       @user.password_confirmation = nil
