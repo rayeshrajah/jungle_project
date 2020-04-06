@@ -49,6 +49,9 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = "SomethingElse"
       expect(@user).to_not be_valid
     end
-  
+  end
+
+  describe '.authenticate_with_credentials' do
+    
   end
 end
