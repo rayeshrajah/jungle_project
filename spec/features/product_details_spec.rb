@@ -21,7 +21,7 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
     page.find('.product', match: :first).find('a', text: 'Details').click
     page.find('.products-show')
     #Debug
-    save_screenshot
+    #save_screenshot
     #Verify
     expect(page).to have_css '.products-show'
   end
