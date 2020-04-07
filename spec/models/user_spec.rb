@@ -60,5 +60,9 @@ RSpec.describe User, type: :model do
       @user.save
       expect(User.authenticate_with_credentials('    ray_6785876@hotmail.com   ', 'ChickenPouletYeah')).to be_a(User)
     end
+    it 'is valid when putting case senstivity' do
+      @user.save
+      expect(User.authenticate_with_credentials('RAY_6785876@hotmail.CoM', 'ChickenPouletYeah')).to be_a(User)
+    end
   end
 end
