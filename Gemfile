@@ -40,9 +40,6 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -61,4 +58,10 @@ end
 group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
