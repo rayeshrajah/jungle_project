@@ -2,6 +2,13 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots
+![Main Page](/docs/Main_Page.png)
+![Username page](/docs/Page_with_username.png)
+![Sold out item](/docs/Item_soldout.png)
+![Admin Page](/docs/Admin_page.png)
+![Create Category](/docs/Create_Category.png)
+![List Category](/docs/List_category.png)
 
 ## Setup
 
@@ -25,3 +32,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
 * PostgreSQL 9.x
 * Stripe
+* Ruby 2.3.5
